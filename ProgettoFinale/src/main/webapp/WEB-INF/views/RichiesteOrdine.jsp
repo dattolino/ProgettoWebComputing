@@ -144,12 +144,7 @@
 			          	<div class="form-group">
 			          		<p>Richiesta: </p> <p id="richiesta"></p>
 			          	</div>
-			          	<div class="form-group">
-			          		<p>Tempo di consegna: </p> <p id="tempoconsegna"></p>
-			          	</div>
-			          	<div class="form-group">
-			          		<p>Stato: </p> <p id="stato"></p>
-			          	</div>
+			          	
 			          </form>
 			        </div>
 			        

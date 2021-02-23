@@ -45,8 +45,8 @@ function analizzaOrdine(){
 				document.getElementById("via").innerHTML = response.via.value;
 				document.getElementById("modalita").innerHTML = response.modalita.value;
 				document.getElementById("richiesta").innerHTML = response.richiesta.value;
-				document.getElementById("tempoconsegna").innerHTML = response.durata;
-				document.getElementById("stato").innerHTML = response.stato.value;
+//				document.getElementById("tempoconsegna").innerHTML = response.durata.value;
+//				document.getElementById("stato").innerHTML = response.stato.value;
 				
 			},
 			fail: function( jqXHR, textStatus ) {
