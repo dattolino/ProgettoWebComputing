@@ -22,10 +22,6 @@ function registraEventi(){
 		inoltraRichiesta();
 	});
 	
-	var btnConferma = document.getElementById("conferma");
-	btnConferma.addEventListener("click", function() {
-		confermaInoltro();
-	});
 }
 
 function analizzaOrdine(){
@@ -49,7 +45,7 @@ function analizzaOrdine(){
 				document.getElementById("via").innerHTML = response.via.value;
 				document.getElementById("modalita").innerHTML = response.modalita.value;
 				document.getElementById("richiesta").innerHTML = response.richiesta.value;
-				document.getElementById("tempoconsegna").innerHTML = response.durata.value;
+				document.getElementById("tempoconsegna").innerHTML = response.durata;
 				document.getElementById("stato").innerHTML = response.stato.value;
 				
 			},
@@ -112,12 +108,18 @@ function inoltraRichiesta(){
 			method: "POST",
 			data:{ modalita:modalita , richiesta:richiesta},
 			success: function(response){
+				document.getElementById("modaltitle2").innerHTML = "Seleziona un dipendente:";
 				dipendenti = response;
 				
 				svuotaTabella2();
 				
 				dipendenti.forEach(function(dipendente,index){
 					aggiungiDipendenteAllaTabella(dipendente);
+				});
+				
+				var btnConferma = document.getElementById("conferma");
+				btnConferma.addEventListener("click", function() {
+					confermaInoltro();
 				});
 				console.log("post for");
 				
@@ -128,35 +130,53 @@ function inoltraRichiesta(){
 			}
 				
 			});
+	} else{
+		document.getElementById("modaltitle2").innerHTML = "Non hai selezionato nessuna richiesta.";
+		svuotaTabella2();
+		alert("Chiudi e seleziona un ordine");
+		return false;
 	}
+	
+	
 }
 
 
 function confermaInoltro(){
+	var btnConferma = document.getElementById("conferma");
+	btnConferma.removeEventListener("click", function() {
+		confermaInoltro();
+	});
 	var checkbox = document.querySelector('input:checked');
-	if(checkbox != null){
+	
+	if(checkbox != null && document.querySelector('input:checked').value!="ConsegnaAerea" &&
+			document.querySelector('input:checked').value!="ConsegnaTerrena"){
+		
 		var riferimento = document.querySelector('input:checked').value;
-		$.ajax({
-			url: "confermaInoltro",
-			method: "POST",
-			data:{ riferimento:riferimento},
-			success: function(response){
-				refreshTable();
-				alert(response);
-				console.log("post for");
-			},
-			fail: function( jqXHR, textStatus ) {
-	  			alert( "Request failed: " + textStatus );
-			}
-				
-			});
+		var conferma = confirm("sei sicuro?");
+		if(conferma==true){
+			$.ajax({
+				url: "confermaInoltro",
+				method: "POST",
+				data:{ riferimento:riferimento},
+				success: function(response){
+					refreshTable();
+					svuotaTabella2();
+					console.log("post for");
+					window.location.reload();
+				},
+				fail: function( jqXHR, textStatus ) {
+		  			alert( "Request failed: " + textStatus );
+				}
+					
+				});
+			
+		}
 		return true;
 	} else{
 		alert("non hai selezionato un dipendente");
 		return false;
 		}
 }
-
 
 
 function svuotaTabella(){
@@ -256,6 +276,10 @@ function singleSelectionModeScript(){
 	
 	return script;
 }
+
+
+
+	
 
 
 

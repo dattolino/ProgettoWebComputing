@@ -55,7 +55,7 @@
 	        <th>Da</th>
 	        <th>A</th>
 	        <th>Via</th>
-	        <th>Modalit�</th>
+	        <th>Modalita</th>
 	        <th>Richiesta</th> 
 	      </tr>
 	      
@@ -116,7 +116,7 @@
 			      
 			        <!-- Modal Header -->
 			        <div class="modal-header">
-			          <h4 class="modal-title" id="modaltitle">Errore! Assicurati di aver selezionato  per analizzarlo.</h4>
+			          <h4 class="modal-title" id="modaltitle">Errore! Assicurati di aver selezionato una richiesta  per analizzarla.</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        
@@ -171,7 +171,7 @@
 			      
 			        <!-- Modal Header -->
 			        <div class="modal-header">
-			          <h4 class="modal-title" id="modaltitle">Lista dipendenti disponibili.</h4>
+			          <h4 class="modal-title" id="modaltitle2">Non hai selezionato nessuna richiesta.</h4>
 			          <button type="button" class="close" data-dismiss="modal">&times;</button>
 			        </div>
 			        
@@ -200,7 +200,7 @@
 			        
 			        <!-- Modal footer -->
 			        <div class="modal-footer">
-			        	<button type="button" class="btn btn-primary" id="conferma">Conferma</button>
+			        	<button type="button" class="btn btn-primary" id="conferma" data-dismiss="modal">Conferma</button>
 			          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 		            </div>
 		        
