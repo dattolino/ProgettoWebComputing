@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+
+
+
+#navbarContainer{
+	background-color:red;
+	width:100%
+}
+
+#testo{
+	width:100%;
+ 		background-color: #c0c0c0;
+ 		text-align: center;
+}
+
+
+#pannello1{
+	width:100%;
+ 		background-color: #c0c0c0;
+ 		text-align: center;
+ 	
+/*  background-image: url("contrassegno.jpg"); */
+ 	
+}
+
+#pannello2{
+	
+	width:100%;
+ 		background-color: #c0c0c0;
+ 		text-align: center;
+ 	
+/*  background-image: url("contrassegno.jpg"); */
+ 	
+}

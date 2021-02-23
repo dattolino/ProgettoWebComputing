@@ -1,0 +1,47 @@
+@charset "ISO-8859-1";
+
+
+#pagina{
+	width:100%;
+}
+#pannelloGrafico{
+	
+	
+	width: 100%;
+	background-color:#c0c0c0 ;
+ 	text-align: center;
+	
+}
+html { width: 100%; height: 100%; height: auto; }
+
+
+#navbarContainer{
+	background-color:red;
+	width:100%
+}
+
+#i{
+	
+	
+}
+#pannelloIntro{
+	
+	
+	width: 100%;
+	background-color: #c0c0c0;
+	text-align: center;
+}
+
+
+
+#pannelloNotifiche{
+	
+	height:100%;
+	width: 100%;
+	background-color: #c0c0c0;
+	text-align: center;
+	
+}
+
+
+

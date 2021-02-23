@@ -1,0 +1,12 @@
+.profile-back{background-color:#9b1f1f;height:150px;margin-bottom:-75px}
+.profile-pic{width:150px;height:150px;margin-bottom:10px}
+.profile-card{text-align:center;margin-bottom:15px;border:1px solid #9b1f1f}
+.profile-name{max-width:300px;background-color:#000;color:#fff;font-family:Actor,sans-serif;font-size:16px;font-weight:700;padding:5px 0;border-radius:100px;max-width:300px;margin:0 auto 10px}
+.profile-card .social-list{list-style:none;padding:0;margin-bottom:20px}
+.profile-card .social-list li{display:inline;margin:0 5px}
+.profile-bio{margin-bottom:10px;padding:10px}
+.profile-card .social-list li i{background-color:#9b1f1f;color:#fff;padding:10px 11px;border-radius:100%}
+#chiara{background-color:#96c}
+#pierpaolo{background-color:#e55137}
+#francesco{background-color:#ffbf18}
+#adriano{background-color:#0020c2}
