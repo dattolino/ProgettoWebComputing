@@ -139,12 +139,11 @@
 			          		<p>Via: </p> <p id="via"></p>
 			          	</div>
 			          	<div class="form-group">
-			          		<p>Modalit�: </p> <p id="modalita"></p>
+			          		<p>Modalita: </p> <p id="modalita"></p>
 			          	</div>
 			          	<div class="form-group">
 			          		<p>Richiesta: </p> <p id="richiesta"></p>
 			          	</div>
-			          	
 			          </form>
 			        </div>
 			        

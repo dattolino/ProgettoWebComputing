@@ -45,8 +45,6 @@ function analizzaOrdine(){
 				document.getElementById("via").innerHTML = response.via.value;
 				document.getElementById("modalita").innerHTML = response.modalita.value;
 				document.getElementById("richiesta").innerHTML = response.richiesta.value;
-//				document.getElementById("tempoconsegna").innerHTML = response.durata.value;
-//				document.getElementById("stato").innerHTML = response.stato.value;
 				
 			},
 			fail: function( jqXHR, textStatus ) {
@@ -64,8 +62,6 @@ function analizzaOrdine(){
 		document.getElementById("via").innerHTML = "";
 		document.getElementById("modalita").innerHTML = "";
 		document.getElementById("richiesta").innerHTML = "";
-		document.getElementById("tempoconsegna").innerHTML = "";
-		document.getElementById("stato").innerHTML = "";
 		return false;
 	}
 
@@ -133,7 +129,7 @@ function inoltraRichiesta(){
 	} else{
 		document.getElementById("modaltitle2").innerHTML = "Non hai selezionato nessuna richiesta.";
 		svuotaTabella2();
-		alert("Chiudi e seleziona un ordine");
+		alert("Seleziona un ordine");
 		return false;
 	}
 	
@@ -142,10 +138,7 @@ function inoltraRichiesta(){
 
 
 function confermaInoltro(){
-	var btnConferma = document.getElementById("conferma");
-	btnConferma.removeEventListener("click", function() {
-		confermaInoltro();
-	});
+	
 	var checkbox = document.querySelector('input:checked');
 	
 	if(checkbox != null && document.querySelector('input:checked').value!="ConsegnaAerea" &&
@@ -154,6 +147,10 @@ function confermaInoltro(){
 		var riferimento = document.querySelector('input:checked').value;
 		var conferma = confirm("sei sicuro?");
 		if(conferma==true){
+			var btnConferma = document.getElementById("conferma");
+			btnConferma.removeEventListener("click", function() {
+				confermaInoltro();
+			});
 			$.ajax({
 				url: "confermaInoltro",
 				method: "POST",
@@ -173,7 +170,8 @@ function confermaInoltro(){
 		}
 		return true;
 	} else{
-		alert("non hai selezionato un dipendente");
+		alert("Non hai selezionato un dipendente.");
+		window.location.reload();
 		return false;
 		}
 }
@@ -276,10 +274,6 @@ function singleSelectionModeScript(){
 	
 	return script;
 }
-
-
-
-	
 
 
 
